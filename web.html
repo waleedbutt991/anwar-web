@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="KJB Fast Food - Pizza, Pasta, Burgers and Deals in Shah Faisal Town, Karachi">
+
+  <title>KJB Fast Food | Karachi</title>
+
+
+  <style>
+
+    /* =========================
+       BASIC SETTINGS
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: white;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================== */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+
+      width: 100%;
+
+      padding: 12px 5%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: rgba(10, 10, 10, 0.97);
+
+      border-bottom: 1px solid #333;
+    }
+
+
+    .logo {
+      color: #ffd21c;
+
+      font-size: 30px;
+      font-weight: 900;
+
+      font-style: italic;
+    }
+
+
+    .logo span {
+      display: block;
+
+      color: white;
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+      text-align: center;
+
+      font-style: normal;
+    }
+
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+
+
+    .nav-links a {
+      color: white;
+
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+
+    .nav-links a:hover {
+      color: #ffd21c;
+    }
+
+
+    .order-nav {
+      background: #e21d25;
+
+      padding: 10px 17px;
+
+      border-radius: 8px;
+
+      font-weight: bold;
+    }
+
+
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+
+    .hero {
+
+      min-height: 90vh;
+
+      display: flex;
+
+      align-items: center;
+
+      position: relative;
+
+      padding: 80px 7%;
+
+      background-image:
+        url("menu-front.png");
+
+      background-size: cover;
+
+      background-position: center;
+    }
+
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,0.90),
+          rgba(0,0,0,0.45),
+          rgba(0,0,0,0.15)
+        );
+    }
+
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 700px;
+    }
+
+
+    .badge {
+
+      display: inline-block;
+
+      background: #e21d25;
+
+      color: #ffd21c;
+
+      padding: 9px 18px;
+
+      border-radius: 50px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+    }
+
+
+    .hero h1 {
+
+      margin-top: 22px;
+
+      font-size: clamp(
+        48px,
+        9vw,
+        90px
+      );
+
+      line-height: 0.9;
+
+      font-weight: 900;
+    }
+
+
+    .hero h1 span {
+
+      color: #ffd21c;
+    }
+
+
+    .hero p {
+
+      margin-top: 25px;
+
+      max-width: 620px;
+
+      font-size: 22px;
+
+      color: #eee;
+    }
+
+
+    .buttons {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 30px;
+    }
+
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 15px 24px;
+
+      border-radius: 9px;
+
+      font-weight: 900;
+
+      transition: 0.3s;
+    }
+
+
+    .btn:hover {
+
+      transform: translateY(-3px);
+    }
+
+
+    .red-btn {
+
+      background: #e21d25;
+
+      color: white;
+    }
+
+
+    .yellow-btn {
+
+      background: #ffd21c;
+
+      color: #111;
+    }
+
+
+    .outline-btn {
+
+      border: 2px solid white;
+
+      color: white;
+    }
+
+
+
+    /* =========================
+       GENERAL SECTION
+    ========================== */
+
+    .section {
+
+      padding: 80px 6%;
+    }
+
+
+    .heading {
+
+      text-align: center;
+
+      max-width: 800px;
+
+      margin: auto;
+
+      margin-bottom: 45px;
+    }
+
+
+    .heading small {
+
+      color: #e21d25;
+
+      font-weight: 900;
+
+      letter-spacing: 3px;
+    }
+
+
+    .heading h2 {
+
+      font-size: clamp(
+        35px,
+        5vw,
+        55px
+      );
+
+      margin: 8px 0;
+    }
+
+
+    .heading p {
+
+      color: #aaa;
+
+      font-size: 17px;
+    }
+
+
+
+    /* =========================
+       FOOD CARDS
+    ========================== */
+
+    .food-grid {
+
+      max-width: 1150px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 20px;
+    }
+
+
+    .food-card {
+
+      background: #1c1c1c;
+
+      border: 1px solid #333;
+
+      border-radius: 18px;
+
+      padding: 28px 22px;
+
+      transition: 0.3s;
+    }
+
+
+    .food-card:hover {
+
+      transform: translateY(-7px);
+
+      border-color: #e21d25;
+    }
+
+
+    .food-icon {
+
+      font-size: 50px;
+
+      margin-bottom: 12px;
+    }
+
+
+    .food-card h3 {
+
+      font-size: 22px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .food-card p {
+
+      color: #aaa;
+
+      margin-bottom: 15px;
+    }
+
+
+    .price {
+
+      color: #ffd21c;
+
+      font-size: 23px;
+
+      font-weight: 900;
+    }
+
+
+
+    /* =========================
+       DHAMAKA DEALS
+    ========================== */
+
+    .deals {
+
+      background: #e21d25;
+
+      padding: 80px 6%;
+    }
+
+
+    .deals .heading small {
+
+      color: #ffd21c;
+    }
+
+
+    .deals .heading p {
+
+      color: #ffe5e5;
+    }
+
+
+    .deal-grid {
+
+      max-width: 1150px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+
+    .deal {
+
+      background: white;
+
+      color: #111;
+
+      padding: 27px 22px;
+
+      border-radius: 17px;
+
+      border: 4px solid #ffd21c;
+    }
+
+
+    .deal-label {
+
+      color: #e21d25;
+
+      font-size: 13px;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+    }
+
+
+    .deal h3 {
+
+      font-size: 23px;
+
+      margin: 8px 0;
+    }
+
+
+    .deal p {
+
+      color: #555;
+
+      min-height: 50px;
+    }
+
+
+    .deal .price {
+
+      color: #e21d25;
+
+      margin-top: 15px;
+
+      font-size: 29px;
+    }
+
+
+
+    /* =========================
+       MENU SECTION
+    ========================== */
+
+    .menu-section {
+
+      background: #f5f5f5;
+
+      color: #111;
+
+      padding: 80px 5%;
+    }
+
+
+    .menu-section .heading p {
+
+      color: #555;
+    }
+
+
+    .menu-images {
+
+      max-width: 1000px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+
+    .menu-images img {
+
+      width: 100%;
+
+      display: block;
+
+      border-radius: 15px;
+
+      box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.20);
+
+      transition: 0.3s;
+    }
+
+
+    .menu-images img:hover {
+
+      transform: scale(1.015);
+    }
+
+
+
+    /* =========================
+       ORDER SECTION
+    ========================== */
+
+    .order-section {
+
+      padding: 80px 6%;
+
+      background: #181818;
+    }
+
+
+    .order-box {
+
+      max-width: 950px;
+
+      margin: auto;
+
+      text-align: center;
+
+      padding: 55px 30px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e21d25,
+          #9c1015
+        );
+    }
+
+
+    .order-box h2 {
+
+      font-size: clamp(
+        34px,
+        5vw,
+        55px
+      );
+
+      line-height: 1.05;
+
+      margin: 10px 0;
+    }
+
+
+    .order-box p {
+
+      color: #ffe5e5;
+
+      font-size: 18px;
+    }
+
+
+
+    /* =========================
+       LOCATION
+    ========================== */
+
+    .location {
+
+      text-align: center;
+
+      padding: 80px 6%;
+
+      background: #101010;
+    }
+
+
+    .address {
+
+      color: #ddd;
+
+      font-size: 20px;
+
+      margin: 20px 0;
+    }
+
+
+    .phone {
+
+      color: #ffd21c;
+
+      font-size: 25px;
+
+      font-weight: 900;
+    }
+
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+
+      text-align: center;
+
+      padding: 45px 20px;
+
+      background: #050505;
+
+      border-top: 1px solid #333;
+    }
+
+
+    .footer-logo {
+
+      color: #ffd21c;
+
+      font-size: 30px;
+
+      font-weight: 900;
+
+      font-style: italic;
+    }
+
+
+    footer p {
+
+      color: #888;
+
+      margin-top: 8px;
+    }
+
+
+    .socials {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 20px;
+
+      margin: 22px 0;
+    }
+
+
+    .socials a {
+
+      color: #ffd21c;
+
+      font-weight: bold;
+    }
+
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+      }
+
+
+      .food-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+
+      .deal-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .navbar {
+
+        padding: 10px 15px;
+      }
+
+
+      .logo {
+
+        font-size: 25px;
+      }
+
+
+      .order-nav {
+
+        font-size: 12px;
+
+        padding: 9px 11px;
+      }
+
+
+      .hero {
+
+        min-height: 80vh;
+
+        padding: 60px 20px;
+      }
+
+
+      .hero h1 {
+
+        font-size: 53px;
+      }
+
+
+      .hero p {
+
+        font-size: 17px;
+      }
+
+
+      .buttons {
+
+        flex-direction: column;
+      }
+
+
+      .btn {
+
+        width: 100%;
+      }
+
+
+      .food-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+
+      .deal-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+
+      .menu-images {
+
+        grid-template-columns: 1fr;
+      }
+
+
+      .section,
+      .deals,
+      .menu-section,
+      .order-section,
+      .location {
+
+        padding: 55px 15px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <header class="navbar">
+
+    <a href="#home" class="logo">
+
+      KJB
+
+      <span>
+        FAST FOOD
+      </span>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+      <a href="#popular">
+        Popular
+      </a>
+
+      <a href="#deals">
+        Deals
+      </a>
+
+      <a href="#menu">
+        Menu
+      </a>
+
+      <a href="#location">
+        Location
+      </a>
+
+    </nav>
+
+
+    <a
+      class="order-nav"
+      href="https://wa.me/923317722225?text=Assalamualaikum%20KJB%20Fast%20Food%2C%20I%20want%20to%20place%20an%20order."
+      target="_blank">
+
+      WhatsApp Order
+
+    </a>
+
+  </header>
+
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section
+    class="hero"
+    id="home">
+
+    <div class="hero-content">
+
+      <div class="badge">
+
+        🍕 KJB FAST FOOD
+
+      </div>
+
+
+      <h1>
+
+        CRAVING
+
+        <br>
+
+        <span>
+          GOOD FOOD?
+        </span>
+
+      </h1>
+
+
+      <p>
+
+        Hot, cheesy pizzas, creamy pasta,
+        juicy burgers and delicious sides —
+        freshly prepared for you.
+
+      </p>
+
+
+      <div class="buttons">
+
+
+        <a
+          class="btn red-btn"
+          href="https://wa.me/923317722225?text=Assalamualaikum%20KJB%20Fast%20Food%2C%20I%20want%20to%20place%20an%20order."
+          target="_blank">
+
+          💬 Order on WhatsApp
+
+        </a>
+
+
+        <a
+          class="btn outline-btn"
+          href="tel:03317722225">
+
+          📞 0331-77-2222-5
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       POPULAR FOOD
+  ========================== -->
+
+  <section
+    class="section"
+    id="popular">
+
+
+    <div class="heading">
+
+      <small>
+        MUST TRY
+      </small>
+
+      <h2>
+        Customer Favourites
+      </h2>
+
+      <p>
+        Delicious choices from
+        the KJB menu.
+      </p>
+
+    </div>
+
+
+
+    <div class="food-grid">
+
+
+      <div class="food-card">
+
+        <div class="food-icon">
+          🍕
+        </div>
+
+        <h3>
+          KJB Supreme Pizza
+        </h3>
+
+        <p>
+          Cheesy pizza loaded
+          with delicious toppings.
+        </p>
+
+        <div class="price">
+          From Rs. 699
+        </div>
+
+      </div>
+
+
+
+      <div class="food-card">
+
+        <div class="food-icon">
+          🍝
+        </div>
+
+        <h3>
+          Creamy Chicken Pasta
+        </h3>
+
+        <p>
+          Rich, creamy pasta
+          with tender chicken.
+        </p>
+
+        <div class="price">
+          Rs. 699
+        </div>
+
+      </div>
+
+
+
+      <div class="food-card">
+
+        <div class="food-icon">
+          🍔
+        </div>
+
+        <h3>
+          Zinger Burger
+        </h3>
+
+        <p>
+          Crispy, spicy and
+          seriously satisfying.
+        </p>
+
+        <div class="price">
+          Rs. 599
+        </div>
+
+      </div>
+
+
+
+      <div class="food-card">
+
+        <div class="food-icon">
+          🍗
+        </div>
+
+        <h3>
+          Chicken Wings
+        </h3>
+
+        <p>
+          Perfect for sharing
+          or a quick snack.
+        </p>
+
+        <div class="price">
+          From Rs. 399
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       DHAMAKA DEALS
+  ========================== -->
+
+  <section
+    class="deals"
+    id="deals">
+
+
+    <div class="heading">
+
+      <small>
+        BIG VALUE
+      </small>
+
+      <h2>
+        KJB Dhamaka Deals
+      </h2>
+
+      <p>
+        Pick your favourite deal
+        and enjoy!
+      </p>
+
+    </div>
+
+
+
+    <div class="deal-grid">
+
+
+      <div class="deal">
+
+        <div class="deal-label">
+          DEAL 01
+        </div>
+
+        <h3>
+          Small Pizza Deal
+        </h3>
+
+        <p>
+          1 Small Pizza
+          + 300ml Drink
+        </p>
+
+        <div class="price">
+          Rs. 599
+        </div>
+
+      </div>
+
+
+
+      <div class="deal">
+
+        <div class="deal-label">
+          DEAL 02
+        </div>
+
+        <h3>
+          Regular Pizza Deal
+        </h3>
+
+        <p>
+          1 Regular Pizza
+          + 2 × 300ml Drinks
+        </p>
+
+        <div class="price">
+          Rs. 899
+        </div>
+
+      </div>
+
+
+
+      <div class="deal">
+
+        <div class="deal-label">
+          DEAL 03
+        </div>
+
+        <h3>
+          Large Pizza Deal
+        </h3>
+
+        <p>
+          1 Large Pizza
+          + 1 Litre Drink
+        </p>
+
+        <div class="price">
+          Rs. 1299
+        </div>
+
+      </div>
+
+
+
+      <div class="deal">
+
+        <div class="deal-label">
+          MIDNIGHT
+        </div>
+
+        <h3>
+          Midnight Deal
+        </h3>
+
+        <p>
+          1 Small Pizza
+        </p>
+
+        <div class="price">
+          Rs. 349
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FULL MENU
+  ========================== -->
+
+  <section
+    class="menu-section"
+    id="menu">
+
+
+    <div class="heading">
+
+      <small>
+        OUR MENU
+      </small>
+
+      <h2>
+        Full Menu
+      </h2>
+
+      <p>
+        Tap any menu image to
+        view it in full size.
+      </p>
+
+    </div>
+
+
+
+    <div class="menu-images">
+
+
+      <!-- RED FRONT MENU -->
+
+      <a
+        href="menu-front.png"
+        target="_blank">
+
+        <img
+          src="menu-front.png"
+          alt="KJB Fast Food Front Menu">
+
+      </a>
+
+
+
+      <!-- WHITE BACK MENU -->
+
+      <a
+        href="menu-back.jpg"
+        target="_blank">
+
+        <img
+          src="menu-back.jpg"
+          alt="KJB Fast Food Back Menu">
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       ORDER
+  ========================== -->
+
+  <section class="order-section">
+
+
+    <div class="order-box">
+
+      <h2>
+        Ready To Eat? 🍕
+      </h2>
+
+      <p>
+        Order your favourite food
+        from KJB Fast Food.
+      </p>
+
+
+      <div class="buttons">
+
+
+        <a
+          class="btn yellow-btn"
+          href="https://wa.me/923317722225?text=Assalamualaikum%20KJB%20Fast%20Food%2C%20I%20want%20to%20place%20an%20order."
+          target="_blank">
+
+          💬 WhatsApp Order
+
+        </a>
+
+
+        <a
+          class="btn outline-btn"
+          href="tel:03317722225">
+
+          📞 Call Now
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       LOCATION
+  ========================== -->
+
+  <section
+    class="location"
+    id="location">
+
+
+    <div class="heading">
+
+      <small>
+        FIND US
+      </small>
+
+      <h2>
+        Visit KJB Fast Food
+      </h2>
+
+
+      <div class="address">
+
+        📍 Shop # G-33,
+        Yellow Line,
+
+        <br>
+
+        Gohar Green City,
+
+        <br>
+
+        Shah Faisal Town,
+        Karachi.
+
+      </div>
+
+
+      <div class="phone">
+
+        📞 0331-77-2222-5
+
+      </div>
+
+
+      <div class="buttons">
+
+        <a
+          class="btn red-btn"
+          href="tel:03317722225">
+
+          Call Now
+
+        </a>
+
+
+        <a
+          class="btn yellow-btn"
+          href="https://wa.me/923317722225?text=Assalamualaikum%20KJB%20Fast%20Food%2C%20I%20want%20to%20place%20an%20order."
+          target="_blank">
+
+          WhatsApp
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+
+    <div class="footer-logo">
+
+      KJB FAST FOOD
+
+    </div>
+
+
+    <p>
+      Fresh Food • Great Taste • Good Times
+    </p>
+
+
+    <div class="socials">
+
+      <a href="#">
+        TikTok
+      </a>
+
+      <a href="#">
+        Facebook
+      </a>
+
+      <a href="#">
+        Instagram
+      </a>
+
+      <a href="#">
+        X
+      </a>
+
+    </div>
+
+
+    <p>
+      © 2026 KJB Fast Food.
+      All Rights Reserved.
+    </p>
+
+
+  </footer>
+
+
+</body>
+
+</html>
